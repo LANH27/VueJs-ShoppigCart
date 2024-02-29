@@ -1,3 +1,5 @@
+![Itgam Banner](md/img/ITGAM.png)
+
 # Shopping Cart 🛒Project
 
 Proyecto didactico para el curso de Desarrollo de aplicaciones para dispositivos moviles usando_Vue-Compstion API 
