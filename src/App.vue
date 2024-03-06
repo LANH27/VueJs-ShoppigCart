@@ -10,7 +10,7 @@ const shoppingIcon = ref('material-icons shopping-cart-icon');
 <h1><i v-bind:class=" shoppingIcon">local_mall</i> {{ header }}</h1>
 </template>
 
-<style scoped>
+<style scoped></style>
 .shopping-cart-icon{
   font-size: 2rem;
 }
