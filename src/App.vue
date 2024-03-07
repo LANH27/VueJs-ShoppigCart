@@ -17,6 +17,7 @@ const items = ref([
 
 <template>
   <h1> <i v-bind:class="shoppingIcon">local_mall</i> {{ header }}</h1>
+  <input v-model="newItem" type="text"placeholder="Agregar articulo">
   <ul>
     <li v-for="item in items" v-bind:key="item.id">⭐{{ item.label }}</li>
   </ul>
