@@ -11,32 +11,37 @@ const items = ref([
   {id: 2, label:'Carne'},
   {id: 3, label:'Pan'},
   {id: 4, label:'Galletas'}
-
-
-]);
+])
+const newItem = ref('');
+const newItemHighPriority = ref (false)
+//Metodos
+const saveItems = () => {
+  //Agrega un nuevo elemento a la lista proveniente de la caja de texto 
+  items.value.push({ id: items.value.length, label: newItem.value})
+  //Borramos el contenido de la caja de texto
+  newItem.value = "";
+};
 </script>
 
 
 <template>
   <h1> <i v-bind:class="shoppingIcon">local_mall</i> {{ header }}</h1>
-  <div class="add-item form">
-  <input v-on:keyup.enter="items.push({id: items.length, label:newItem})" v-model="newItem" type="text"placeholder="Agregar articulo">
-  <!-- Checkbox -->
-  <label><input type="checkbox" v-model="newItemHighPriority">Alta Prioridad</label>
-  <label>
-    <input type="checkbox" v-model="newItemHighPriority">
-    Alta Prioridad
-  </label>
-  <!-- Boton-->
-  <button class="btn btn-primary" v-on:keyup.enter="items.push({id: items.length, label:newItem})">
-    Agregar Articulo
-  </button>
-  </div>
+
+  <form v-on:submit.prevent="items.push({ id: items.length, label: newItem})" class="add-item form">
+  <form v-on:submit.prevent="saveItems" class="add-item form">
+
+    <input v-model="newItem" type="text" placeholder="Agregar Articulo">
+
+    <label><input type="checkbox" v-model="newItemHighPriority">Alta Prioridad</label>
+    
+    <button class="btn btn-primary">
+    Agrear Articulo</button>
+    </form>
+  </form>
   <ul>
-    <li v-for="item in items" v-bind:key="item.id">⭐{{ item.label }}</li>
+    <li v-for="({id, label}, i) in items" v-bind:key="id">⭐{{ label }}</li>
   </ul>
 </template>
-
 <style scoped>
 .shopping-cart-icon {
   font-size: 2rem;
