@@ -13,7 +13,7 @@ const items = ref([
 //  { id: 1, label: 'Arroz', purchased:false, highPriority:false },
 //  { id: 2, label: 'Carne', purchased:true, highPriority:true },
 //  { id: 3, label: 'Pan', purchased:false, highPriority:false },
-//  { id: 4, label: 'Huevos', purchased:true, highPriority:true }
+// { id: 4, label: 'Huevos', purchased:true, highPriority:true }
 ]);
 const reversedItems = computed(()=>{
   //Regresaremos una version invertida
